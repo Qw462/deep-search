@@ -38,6 +38,7 @@ def list_sql_tables() -> str:
         列出数据库中所有可用的表
     :return:   有表： 可用的表：a,b,c  没表：没有可用的表
     """
+    print("----正在查询数据库中的表名...")
     try:
         # 连接数据库，得到连接对象 conn
         with connect(**get_db_config()) as conn:
@@ -70,6 +71,7 @@ def get_table_data(table_name: str) -> str:
 
     返回的结果数据： "id,name,age\n1,二狗子,1\n2,驴蛋蛋,19"
     """
+    print(f"----正在查询表{table_name}的数据...")
     try:
         # 连接数据库，得到连接对象 conn
         with connect(**_db_config) as conn:
@@ -105,6 +107,7 @@ def execute_sql_query(sql: str) -> str:
     :param sql: 由大模型生成的sql
     :return:  字段列表和数据列表的字符串
     """
+    print(f"----正在执行SQL：{sql}")
     try:
         # 连接数据库，得到连接对象 conn
         with connect(**_db_config) as conn:
