@@ -23,6 +23,8 @@ def get_chat_list() -> str:
         助手名称:xxx , 描述: xx , 关联的知识库: x,x,x,x \n
         助手名称:xxx , 描述: xx , 关联的知识库: x,x,x,x \n
     """
+    print("--get_chat_list")
+
     # 获取所有chat列表
     chats = _ragflow_client.list_chats()
     print(chats)
@@ -46,6 +48,7 @@ def create_ask_delete(chat_name: str, question: str) -> str:
           question是本次提问的问题
       返回结果就是提问的回答
     """
+    print(f"--create_ask_delete,  {chat_name}--{question}")
     # 根据名称查找对应的chat对象
     chats = _ragflow_client.list_chats(name=chat_name)
     if not chats:
