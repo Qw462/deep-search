@@ -19,7 +19,7 @@ def internet_search(
     topic: Literal["general", "news", "finance"] = "general",
     include_raw_content: bool = False,
 ):
-    """使用 Tavily 进行联网搜索"""
+    """使用  Tavily 进行联网搜索"""
     print(f"正在搜索: {query}")
     return tavily_client.search(
         query=query,
